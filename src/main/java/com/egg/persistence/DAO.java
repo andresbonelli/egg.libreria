@@ -9,7 +9,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 public abstract class DAO<T> {
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ViveroPU");
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("LibreriaPU");
     private final Class<T> clase;
 
 

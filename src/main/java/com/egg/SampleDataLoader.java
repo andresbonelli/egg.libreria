@@ -41,7 +41,7 @@ public class SampleDataLoader implements Runnable {
             libroService.crearLibro(9788437604953L, "El alquimista", 1988, 208, 2L, 2L);
             libroService.crearLibro(9788437604954L, "El principito", 1943, 96, 3L, 2L);
             libroService.crearLibro(9788437604955L, "El retrato de Dorian Gray", 1890, 352, 4L, 2L);
-            libroService.crearLibro(9788437604956L, "El señor de los anillos", 1954, 1178, 5L, 2L);
+            libroService.crearLibro(9788437604956L, "El Hobbit", 1954, 1178, 5L, 2L);
             libroService.crearLibro(9788437604967L, "El señor de los anillos: La comunidad del anillo", 1954, 576, 5L, 2L);
             libroService.crearLibro(9788437604968L, "El señor de los anillos: Las dos torres", 1954, 576, 5L, 2L);
             libroService.crearLibro(9788437604969L, "El señor de los anillos: El retorno del rey", 1955, 576, 5L, 2L);

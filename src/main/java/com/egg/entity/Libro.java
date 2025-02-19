@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table(name = "t_libro")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Libro {
     @Id
     @Column(name = "isbn")

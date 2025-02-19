@@ -1,5 +1,6 @@
 package com.egg.service;
 
+import com.egg.dto.LibroResponseDTO;
 import com.egg.entity.Autor;
 import com.egg.entity.Editorial;
 import com.egg.entity.Libro;
@@ -13,18 +14,36 @@ public class LibroService {
     private final LibroDAO libroDAO;
     private final AutorService autorService;
     private final EditorialService editorialService;
+
     public LibroService() {
         libroDAO = new LibroDAO();
         autorService = new AutorService();
         editorialService = new EditorialService();
     }
 
-    public List<Libro> listarLibros() {
-        return libroDAO.listarTodos();
+    public List<LibroResponseDTO> listarLibros() {
+        List<Libro> libros = libroDAO.listarTodos();
+        return libros.stream().map(libro -> new LibroResponseDTO(
+                libro.getIsbn(),
+                libro.getTitulo(),
+                libro.getAnio(),
+                libro.getEjemplares(),
+                libro.getAutor().getNombre(),
+                libro.getEditorial().getNombre()
+        )).toList();
     }
 
-    public Libro buscarLibroPorIsbn(Long isbn) {
-        return libroDAO.buscarPorId(isbn);
+    public LibroResponseDTO buscarLibroPorIsbn(Long isbn) {
+
+        Libro libro = libroDAO.buscarPorId(isbn);
+        return new LibroResponseDTO(
+                libro.getIsbn(),
+                libro.getTitulo(),
+                libro.getAnio(),
+                libro.getEjemplares(),
+                libro.getAutor().getNombre(),
+                libro.getEditorial().getNombre()
+        );
     }
 
     @Transactional
